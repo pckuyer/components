@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="wrapper">
+        <section>just having something to scroll with</section>
+            <div class="normal">normal speed</div>
+            <div class="background">slow</div>
+            <div class="backbackground">even slower</div>
+        <section>just having something to scroll with</section>
+    </div>
+
+
+    <!-- style -->
+    <style>
+        
+
+        /*for parallax, 4 lines of css are necessary: wrapper and background.       */
+        .wrapper {
+            height: 100vh;
+            overflow-y: auto;
+            perspective: 10px;
+        }
+
+        .background{
+            transform: translateZ(-10px) scale(2);
+        }
+
+
+        /* adding an even slower element */
+        .backbackground {
+            transform: translateZ(-20px) scale(3);
+        }
+
+        /* just having something to scroll with */
+        section {
+            background-color: grey;
+            height: 800px;
+            position: relative; /* preventing overlfow of parallax */
+            z-index: 2; /* preventing overlfow of parallax */
+        }
+
+        /* setting height element to approximate size of section, but uncessary. Could also be 80px */
+        .normal {
+            height: 600px;
+        }
+
+      
+    </style>
+    <!-- end style -->
+
+</body>
+</html>
+
+
+
